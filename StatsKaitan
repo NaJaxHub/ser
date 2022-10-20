@@ -1,3 +1,45 @@
+PointStats:Label("Kaitan Stats")
+
+PointStats:Toggle("Auto Point Stats kaitan",_G.Setting_table.StatsKaitan,function(a)
+    _G.Setting_table.StatsKaitan = a
+    Update_Setting(getgenv()['MyName'])
+end)
+PointStats:Toggle("Point Max Stats kaitan",_G.Setting_table.MaxPoint,function(a)
+	_G.Setting_table.MaxPoint = a
+    Update_Setting(getgenv()['MyName'])
+end)
+PointStats:Label("Normal Stats")
+
+PointStats:Toggle("Add Point Melee",_G.Setting_table.melee,function(a)
+	_G.Setting_table.melee = a
+    Update_Setting(getgenv()['MyName'])
+end)
+PointStats:Toggle("Add Point Defense",_G.Setting_table.defense,function(a)
+	_G.Setting_table.defense = a
+	Update_Setting(getgenv()['MyName'])
+end)
+PointStats:Toggle("Add Point Sword",_G.Setting_table.sword,function(a)
+	_G.Setting_table.sword = a
+	Update_Setting(getgenv()['MyName'])
+end)
+PointStats:Toggle("Add Point Gun",_G.Setting_table.gun,function(a)
+	_G.Setting_table.gun = a
+	Update_Setting(getgenv()['MyName'])
+end)
+PointStats:Toggle("Add Point Devil Fruit",_G.Setting_table.demonfruit,function(a)
+	_G.Setting_table.demonfruit = a
+	Update_Setting(getgenv()['MyName'])
+end)
+PointStats:Label("Add Point Stats")
+
+PointStats:Slider("Point ",1,10,_G.Setting_table.AddPointStats,_G.Setting_table.AddPointStats,function(a)
+	_G.Setting_table.AddPointStats = a
+	Update_Setting(getgenv()['MyName'])
+end)
+PointStats:Toggle("Point Max Stats",_G.Setting_table.MaxAddPoint,function(a)
+	_G.Setting_table.MaxAddPoint = a
+	Update_Setting(getgenv()['MyName'])
+end)
 spawn(function()
     while wait() do
         pcall(function()
@@ -9,7 +51,7 @@ spawn(function()
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Melee", PointStats)
                 elseif game:GetService("Players").LocalPlayer.Data.Points.Value >= 2300 then
                     game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Defense", PointStats)
-                    else
+                else
                 end
             end
         end)
@@ -18,7 +60,7 @@ end)
         spawn(function()
             while wait(.1) do
                 pcall(function()
-                    if _G.Setting_table.MaxPoint then
+                    if _G.Setting_table.MaxAddPoint then
                         _G.Setting_table.AddPointStats = game:GetService("Players").LocalPlayer.Data.Points.Value
                     end
                 end)
@@ -49,7 +91,7 @@ end)
 spawn(function()
     while task.wait() do
         pcall(function()
-            if _G.Setting_table.melee then
+            if _G.Setting_table.Melee then
                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Melee",1)
             end
             if _G.Setting_table.Def then
