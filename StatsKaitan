@@ -1,0 +1,69 @@
+spawn(function()
+    while wait() do
+        pcall(function()
+            if _G.Setting_table.MaxPoint then
+                PointStats = game:GetService("Players").LocalPlayer.Data.Points.Value
+            end
+            if _G.Setting_table.StatsKaitan then
+                if game:GetService("Players").LocalPlayer.Data.Points.Value < 2300 then
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Melee", PointStats)
+                elseif game:GetService("Players").LocalPlayer.Data.Points.Value >= 2300 then
+                    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Defense", PointStats)
+                    else
+                end
+            end
+        end)
+    end
+end)
+        spawn(function()
+            while wait(.1) do
+                pcall(function()
+                    if _G.Setting_table.MaxPoint then
+                        _G.Setting_table.AddPointStats = game:GetService("Players").LocalPlayer.Data.Points.Value
+                    end
+                end)
+            end
+        end)
+        spawn(function()
+            while wait(.1) do
+                pcall(function()
+				if _G.Setting_table.melee then
+					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Melee", _G.Setting_table.AddPointStats)
+				end 
+				if _G.Setting_table.defense then
+				game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Defense", _G.Setting_table.AddPointStats)
+				end 
+				if _G.Setting_table.sword then
+					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Sword", _G.Setting_table.AddPointStats)
+				end 
+				if _G.Setting_table.gun then
+					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Gun", _G.Setting_table.AddPointStats)
+				end 
+				if _G.Setting_table.demonfruit then
+					game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","demonfruit", _G.Setting_table.AddPointStats)
+				end
+                end)
+            end
+        end)
+
+spawn(function()
+    while task.wait() do
+        pcall(function()
+            if _G.Setting_table.melee then
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Melee",1)
+            end
+            if _G.Setting_table.Def then
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Defense",1)
+            end
+            if _G.Setting_table.Sword then
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Sword",1)
+            end
+            if _G.Setting_table.Gun then
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Gun",1)
+            end
+            if _G.Setting_table.BF then
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AddPoint","Blox Fruit",1)
+            end
+        end)
+    end
+end)
