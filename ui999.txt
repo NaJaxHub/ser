@@ -1,11 +1,23 @@
-local MrMaxNaJa = Instance.new("ScreenGui")
+local GUI = Instance.new("ScreenGui")
 local ImageButton = Instance.new("ImageButton")
 local UICorner = Instance.new("UICorner")
 
-MrMaxNaJa.Parent = game.CoreGui
-MrMaxNaJa.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+GUI.Parent = game.CoreGui
+GUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
-ImageButton.Parent = MrMaxNaJa
+function UI()
+    game:GetService("CoreGui").ScreenGui:Destroy()
+end
+
+if game:GetService("CoreGui").ScreenGui then
+    UI()
+end
+local GUI = Instance.new("ScreenGui")
+
+GUI.Parent = game.CoreGui
+GUI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+ImageButton.Parent = GUI
 ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 --ImageButton.BackgroundTransparency = 0.5
 ImageButton.BorderSizePixel = 0
@@ -15,12 +27,8 @@ ImageButton.Draggable = true
 ImageButton.Image = "rbxassetid://12862171447"
 ImageButton.MouseButton1Down:connect(function()
 game.CoreGui:FindFirstChild("MrMaxNaJa").Enabled = not game.CoreGui:FindFirstChild("MrMaxNaJa").Enabled
+
 end)
-do --local 
-    if game:GetService("CoreGui").ScreenGui then
-        game:GetService("CoreGui").ScreenGui:Destroy()
-    end
-end
 
 UICorner.Parent = ImageButton
 
@@ -28,6 +36,7 @@ do local GUI = game.CoreGui:FindFirstChild("MrMaxNaJa");if GUI then GUI:Destroy(
        _G.Color = Color3.fromRGB(255,255,255)
    end 
 end
+
 local Update = {}
 _G.Color = Color3.fromRGB(0,0,0)--Color3.fromRGB(120,35,100)
 _G.FrameTop = Color3.fromRGB(23,23,23)--Color3.fromRGB(100, 35, 35)
@@ -155,7 +164,7 @@ function Update:Window(text,logo,keybind)
 	Name.Position = UDim2.new(0.0, 0, 0, 0)
 	Name.Size = UDim2.new(0, 652, 0, 27)
 	Name.Font = Enum.Font.GothamSemibold
-	Name.Text = "Sky Hub | Map Blox Fruits - Free Script Version 0.1.15.1" --text
+	Name.Text = "NaJa Hub | Map Blox Fruits - Free Script Version 0.1.15.1" --text
 	Name.TextColor3 = Color3.fromRGB(225, 225, 225)
 	Name.TextSize = 17.000
 
@@ -1450,4 +1459,3 @@ function Update:Window(text,logo,keybind)
 	return uitab
 end
 return Update
-
