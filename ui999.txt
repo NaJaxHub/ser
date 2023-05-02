@@ -1397,7 +1397,31 @@ function Update:Window(text,logo,keybind)
 			end
 			return labelfunc
 		end
+        function main:Label2(text,TextSize)
+			local Label = Instance.new("TextLabel")
+			local PaddingLabel = Instance.new("UIPadding")
+			local labelfunc = {}
+	        
+			Label.Name = "Label"
+			Label.Parent = MainFramePage1
+			Label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Label.BackgroundTransparency = 1.000
+			Label.Size = UDim2.new(0, 220, 0, 12)
+			Label.Font = Enum.Font.GothamSemibold
+			Label.TextColor3 = Color3.fromRGB(225, 225, 225)
+			Label.TextSize = TextSize --12.000
+			Label.Text = text
+			Label.TextXAlignment = Enum.TextXAlignment.Left
 
+			PaddingLabel.PaddingLeft = UDim.new(0,15)
+			PaddingLabel.Parent = Label
+			PaddingLabel.Name = "PaddingLabel"
+	
+			function labelfunc:Set(newtext)
+				Label.Text = newtext
+			end
+			return labelfunc
+		end
 		function main:Seperator(text)
 			local Seperator = Instance.new("Frame")
 			local Sep1 = Instance.new("Frame")
@@ -1449,13 +1473,33 @@ function Update:Window(text,logo,keybind)
 			
 			Line.Name = "Line"
 			Line.Parent = Linee
-			Line.BackgroundColor3 = _G.Color
+			Line.BackgroundColor3 = Color3.fromRGB(255, 255, 255) --_G.Color
 			Line.BorderSizePixel = 0
 			Line.Position = UDim2.new(0, 0, 0, 8)
 			Line.Size = UDim2.new(0, 232, 0, 1)
+		end
+		function main:Line2()
+			local Linee = Instance.new("Frame")
+			local Line = Instance.new("Frame")
+			
+			Linee.Name = "Linee"
+			Linee.Parent = MainFramePage1
+			Linee.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+			Linee.BackgroundTransparency = 1.000
+			Linee.Position = UDim2.new(0, 0, 0.119999997, 0)
+			Linee.Size = UDim2.new(0, 220, 0, 8)
+			
+			Line.Name = "Line"
+			Line.Parent = Linee
+			Line.BackgroundColor3 = Color3.fromRGB(255, 255, 255) --_G.Color
+			Line.BorderSizePixel = 0
+			Line.Position = UDim2.new(0, 0, 0, 8)
+			Line.Size = UDim2.new(0, 220, 0, 1)
+			
 		end
 		return main
 	end
 	return uitab
 end
+
 return Update
