@@ -1,5 +1,5 @@
 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/NaJaxHub/ser/main/"))() --Blox Fruits 
 
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/NaJaxHub/ser/main/Protected_5.lua.txt"))() --Blox Fruits 
 
