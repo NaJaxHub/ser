@@ -1,5 +1,5 @@
-if getgenv().SpyBypassByMrMaxNaJaExecuted and type(getgenv().SpyBypassByMrMaxNaJaShutdown) == "function" then
-    getgenv().SpyBypassByMrMaxNaJaShutdown()
+if getgenv().SpyByMrMaxNaJaExecuted and type(getgenv().SpyByMrMaxNaJaShutdown) == "function" then
+    getgenv().SpyByMrMaxNaJaShutdown()
 end
 
 local realconfigs = {
@@ -216,11 +216,11 @@ function ErrorPrompt(Message,state)
     end
 end
 
-local Highlight = (isfile and loadfile and isfile("Highlight.lua") and loadfile("Highlight.lua")()) or loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SpyBypassByMrMaxNaJa/main/Highlight.lua"))()
+local Highlight = (isfile and loadfile and isfile("Highlight.lua") and loadfile("Highlight.lua")()) or loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SpyByMrMaxNaJa/main/Highlight.lua"))()
 
-local SpyBypassByMrMaxNaJa3 = Create("ScreenGui",{ResetOnSpawn = false})
+local SpyByMrMaxNaJa3 = Create("ScreenGui",{ResetOnSpawn = false})
 local Storage = Create("Folder",{})
-local Background = Create("Frame",{Parent = SpyBypassByMrMaxNaJa3,BackgroundColor3 = Color3.new(1, 1, 1),BackgroundTransparency = 1,Position = UDim2.new(0, 500, 0, 200),Size = UDim2.new(0, 450, 0, 268)})
+local Background = Create("Frame",{Parent = SpyByMrMaxNaJa3,BackgroundColor3 = Color3.new(1, 1, 1),BackgroundTransparency = 1,Position = UDim2.new(0, 500, 0, 200),Size = UDim2.new(0, 450, 0, 268)})
 local LeftPanel = Create("Frame",{Parent = Background,BackgroundColor3 = Color3.fromRGB(53, 52, 55),BorderSizePixel = 0,Position = UDim2.new(0, 0, 0, 19),Size = UDim2.new(0, 131, 0, 249)})
 local LogList = Create("ScrollingFrame",{Parent = LeftPanel,Active = true,BackgroundColor3 = Color3.new(1, 1, 1),BackgroundTransparency = 1,BorderSizePixel = 0,Position = UDim2.new(0, 0, 0, 9),Size = UDim2.new(0, 131, 0, 232),CanvasSize = UDim2.new(0, 0, 0, 0),ScrollBarThickness = 4})
 local UIListLayout = Create("UIListLayout",{Parent = LogList,HorizontalAlignment = Enum.HorizontalAlignment.Center,SortOrder = Enum.SortOrder.LayoutOrder})
@@ -229,7 +229,7 @@ local CodeBox = Create("Frame",{Parent = RightPanel,BackgroundColor3 = Color3.ne
 local ScrollingFrame = Create("ScrollingFrame",{Parent = RightPanel,Active = true,BackgroundColor3 = Color3.new(1, 1, 1),BackgroundTransparency = 1,Position = UDim2.new(0, 0, 0.5, 0),Size = UDim2.new(1, 0, 0.5, -9),CanvasSize = UDim2.new(0, 0, 0, 0),ScrollBarThickness = 4})
 local UIGridLayout = Create("UIGridLayout",{Parent = ScrollingFrame,HorizontalAlignment = Enum.HorizontalAlignment.Center,SortOrder = Enum.SortOrder.LayoutOrder,CellPadding = UDim2.new(0, 0, 0, 0),CellSize = UDim2.new(0, 94, 0, 27)})
 local TopBar = Create("Frame",{Parent = Background,BackgroundColor3 = Color3.fromRGB(37, 35, 38),BorderSizePixel = 0,Size = UDim2.new(0, 450, 0, 19)})
-local Simple = Create("TextButton",{Parent = TopBar,BackgroundColor3 = Color3.new(1, 1, 1),AutoButtonColor = false,BackgroundTransparency = 1,Position = UDim2.new(0, 5, 0, 0),Size = UDim2.new(0, 57, 0, 18),Font = Enum.Font.SourceSansBold,Text =  "SpyBypassByMrMaxNaJa",TextColor3 = Color3.new(1, 1, 1),TextSize = 14,TextXAlignment = Enum.TextXAlignment.Left})
+local Simple = Create("TextButton",{Parent = TopBar,BackgroundColor3 = Color3.new(1, 1, 1),AutoButtonColor = false,BackgroundTransparency = 1,Position = UDim2.new(0, 5, 0, 0),Size = UDim2.new(0, 57, 0, 18),Font = Enum.Font.SourceSansBold,Text =  "SpyByMrMaxNaJa",TextColor3 = Color3.new(1, 1, 1),TextSize = 14,TextXAlignment = Enum.TextXAlignment.Left})
 local CloseButton = Create("TextButton",{Parent = TopBar,BackgroundColor3 = Color3.new(0.145098, 0.141176, 0.14902),BorderSizePixel = 0,Position = UDim2.new(1, -19, 0, 0),Size = UDim2.new(0, 19, 0, 19),Font = Enum.Font.SourceSans,Text = "",TextColor3 = Color3.new(0, 0, 0),TextSize = 14})
 local ImageLabel = Create("ImageLabel",{Parent = CloseButton,BackgroundColor3 = Color3.new(1, 1, 1),BackgroundTransparency = 1,Position = UDim2.new(0, 5, 0, 5),Size = UDim2.new(0, 9, 0, 9),Image = "http://www.roblox.com/asset/?id=5597086202"})
 local MaximizeButton = Create("TextButton",{Parent = TopBar,BackgroundColor3 = Color3.new(0.145098, 0.141176, 0.14902),BorderSizePixel = 0,Position = UDim2.new(1, -38, 0, 0),Size = UDim2.new(0, 19, 0, 19),Font = Enum.Font.SourceSans,Text = "",TextColor3 = Color3.new(0, 0, 0),TextSize = 14})
@@ -237,7 +237,7 @@ local ImageLabel_2 = Create("ImageLabel",{Parent = MaximizeButton,BackgroundColo
 local MinimizeButton = Create("TextButton",{Parent = TopBar,BackgroundColor3 = Color3.new(0.145098, 0.141176, 0.14902),BorderSizePixel = 0,Position = UDim2.new(1, -57, 0, 0),Size = UDim2.new(0, 19, 0, 19),Font = Enum.Font.SourceSans,Text = "",TextColor3 = Color3.new(0, 0, 0),TextSize = 14})
 local ImageLabel_3 = Create("ImageLabel",{Parent = MinimizeButton,BackgroundColor3 = Color3.new(1, 1, 1),BackgroundTransparency = 1,Position = UDim2.new(0, 5, 0, 5),Size = UDim2.new(0, 9, 0, 9),Image = "http://www.roblox.com/asset/?id=5597105827"})
 
-local ToolTip = Create("Frame",{Parent = SpyBypassByMrMaxNaJa3,BackgroundColor3 = Color3.fromRGB(26, 26, 26),BackgroundTransparency = 0.1,BorderColor3 = Color3.new(1, 1, 1),Size = UDim2.new(0, 200, 0, 50),ZIndex = 3,Visible = false})
+local ToolTip = Create("Frame",{Parent = SpyByMrMaxNaJa3,BackgroundColor3 = Color3.fromRGB(26, 26, 26),BackgroundTransparency = 0.1,BorderColor3 = Color3.new(1, 1, 1),Size = UDim2.new(0, 200, 0, 50),ZIndex = 3,Visible = false})
 local TextLabel = Create("TextLabel",{Parent = ToolTip,BackgroundColor3 = Color3.new(1, 1, 1),BackgroundTransparency = 1,Position = UDim2.new(0, 2, 0, 2),Size = UDim2.new(0, 196, 0, 46),ZIndex = 3,Font = Enum.Font.SourceSans,Text = "This is some slightly longer text.",TextColor3 = Color3.new(1, 1, 1),TextSize = 14,TextWrapped = true,TextXAlignment = Enum.TextXAlignment.Left,TextYAlignment = Enum.TextYAlignment.Top})
 
 -------------------------------------------------------------------------------
@@ -275,11 +275,11 @@ local prevTables = {}
 --- holds logs (for deletion)
 local remoteLogs = {}
 --- used for hookfunction
-getgenv().SpyBypassByMrMaxNaJaCONFIG_MaxRemotes = 300
+getgenv().SpyByMrMaxNaJaCONFIG_MaxRemotes = 300
 local indent = 4
 local scheduled = {}
 local schedulerconnect
-local SpyBypassByMrMaxNaJa = {}
+local SpyByMrMaxNaJa = {}
 local topstr = ""
 local bottomstr = ""
 local remotesFadeIn
@@ -330,7 +330,7 @@ end
 
 xpcall(function()
     if isfile and readfile and isfolder and makefolder then
-        local cachedconfigs = isfile("SpyBypassByMrMaxNaJa//Settings.json") and jsond(readfile("SpyBypassByMrMaxNaJa//Settings.json"))
+        local cachedconfigs = isfile("SpyByMrMaxNaJa//Settings.json") and jsond(readfile("SpyByMrMaxNaJa//Settings.json"))
 
         if cachedconfigs then
             for i,v in next, realconfigs do
@@ -341,19 +341,19 @@ xpcall(function()
             realconfigs = cachedconfigs
         end
 
-        if not isfolder("SpyBypassByMrMaxNaJa") then
-            makefolder("SpyBypassByMrMaxNaJa")
+        if not isfolder("SpyByMrMaxNaJa") then
+            makefolder("SpyByMrMaxNaJa")
         end
-        if not isfolder("SpyBypassByMrMaxNaJa//Assets") then
-            makefolder("SpyBypassByMrMaxNaJa//Assets")
+        if not isfolder("SpyByMrMaxNaJa//Assets") then
+            makefolder("SpyByMrMaxNaJa//Assets")
         end
-        if not isfile("SpyBypassByMrMaxNaJa//Settings.json") then
-            writefile("SpyBypassByMrMaxNaJa//Settings.json",jsone(realconfigs))
+        if not isfile("SpyByMrMaxNaJa//Settings.json") then
+            writefile("SpyByMrMaxNaJa//Settings.json",jsone(realconfigs))
         end
 
         configsmetatable.__newindex = function(self,index,newindex)
             realconfigs[index] = newindex
-            writefile("SpyBypassByMrMaxNaJa//Settings.json",jsone(realconfigs))
+            writefile("SpyByMrMaxNaJa//Settings.json",jsone(realconfigs))
         end
     else
         configsmetatable.__newindex = function(self,index,newindex)
@@ -368,9 +368,9 @@ local function logthread(thread: thread)
     table.insert(running_threads,thread)
 end
 
---- Prevents remote spam from causing lag (clears logs after `getgenv().SpyBypassByMrMaxNaJaCONFIG_MaxRemotes` or 500 remotes)
+--- Prevents remote spam from causing lag (clears logs after `getgenv().SpyByMrMaxNaJaCONFIG_MaxRemotes` or 500 remotes)
 function clean()
-    local max = getgenv().SpyBypassByMrMaxNaJaCONFIG_MaxRemotes
+    local max = getgenv().SpyByMrMaxNaJaCONFIG_MaxRemotes
     if not typeof(max) == "number" and math.floor(max) ~= max then
         max = 500
     end
@@ -403,7 +403,7 @@ function scaleToolTip()
     ToolTip.Size = UDim2.new(0, size.X + 4, 0, size.Y + 4)
 end
 
---- Executed when the toggle button (the SpyBypassByMrMaxNaJa logo) is hovered over
+--- Executed when the toggle button (the SpyByMrMaxNaJa logo) is hovered over
 function onToggleButtonHover()
     if not toggle then
         TweenService:Create(Simple, TweenInfo.new(0.5), {TextColor3 = Color3.fromRGB(252, 51, 51)}):Play()
@@ -693,18 +693,18 @@ function isInDragRange(p)
     return relativeP.X <= topbarAS.X - CloseButton.AbsoluteSize.X * 3 and relativeP.X >= 0 and relativeP.Y <= topbarAS.Y and relativeP.Y >= 0 or false
 end
 
---- Called when mouse enters SpyBypassByMrMaxNaJa
-local customCursor = Create("ImageLabel",{Parent = SpyBypassByMrMaxNaJa3,Visible = false,Size = UDim2.fromOffset(200, 200),ZIndex = 1e9,BackgroundTransparency = 1,Image = "",Parent = SpyBypassByMrMaxNaJa3})
+--- Called when mouse enters SpyByMrMaxNaJa
+local customCursor = Create("ImageLabel",{Parent = SpyByMrMaxNaJa3,Visible = false,Size = UDim2.fromOffset(200, 200),ZIndex = 1e9,BackgroundTransparency = 1,Image = "",Parent = SpyByMrMaxNaJa3})
 function mouseEntered()
-    local con = connections["SpyBypassByMrMaxNaJa_CURSOR"]
+    local con = connections["SpyByMrMaxNaJa_CURSOR"]
     if con then
         con:Disconnect()
-        connections["SpyBypassByMrMaxNaJa_CURSOR"] = nil
+        connections["SpyByMrMaxNaJa_CURSOR"] = nil
     end
-    connections["SpyBypassByMrMaxNaJa_CURSOR"] = RunService.RenderStepped:Connect(function()
+    connections["SpyByMrMaxNaJa_CURSOR"] = RunService.RenderStepped:Connect(function()
         UserInputService.MouseIconEnabled = not mouseInGui
         customCursor.Visible = mouseInGui
-        if mouseInGui and getgenv().SpyBypassByMrMaxNaJaExecuted then
+        if mouseInGui and getgenv().SpyByMrMaxNaJaExecuted then
             local mouseLocation = UserInputService:GetMouseLocation() - Vector2.new(0, 36)
             customCursor.Position = UDim2.fromOffset(mouseLocation.X - customCursor.AbsoluteSize.X / 2, mouseLocation.Y - customCursor.AbsoluteSize.Y / 2)
             local inRange, type = isInResizeRange(mouseLocation)
@@ -718,7 +718,7 @@ function mouseEntered()
                 customCursor.Image = "rbxassetid://6065775281"
             end
         else
-            connections["SpyBypassByMrMaxNaJa_CURSOR"]:Disconnect()
+            connections["SpyByMrMaxNaJa_CURSOR"]:Disconnect()
         end
     end)
 end
@@ -793,8 +793,8 @@ function backgroundUserInput(input)
         local lastPos = UserInputService:GetMouseLocation()
         local offset = Background.AbsoluteSize - lastPos
         local currentPos = lastPos + offset
-        if not connections["SpyBypassByMrMaxNaJa_RESIZE"] then
-            connections["SpyBypassByMrMaxNaJa_RESIZE"] = RunService.RenderStepped:Connect(function()
+        if not connections["SpyByMrMaxNaJa_RESIZE"] then
+            connections["SpyByMrMaxNaJa_RESIZE"] = RunService.RenderStepped:Connect(function()
                 local newPos = UserInputService:GetMouseLocation()
                 if newPos ~= lastPos then
                     local currentX = (newPos + offset).X
@@ -819,9 +819,9 @@ function backgroundUserInput(input)
         end
         table.insert(connections, UserInputService.InputEnded:Connect(function(inputE)
             if input == inputE then
-                if connections["SpyBypassByMrMaxNaJa_RESIZE"] then
-                    connections["SpyBypassByMrMaxNaJa_RESIZE"]:Disconnect()
-                    connections["SpyBypassByMrMaxNaJa_RESIZE"] = nil
+                if connections["SpyByMrMaxNaJa_RESIZE"] then
+                    connections["SpyByMrMaxNaJa_RESIZE"]:Disconnect()
+                    connections["SpyByMrMaxNaJa_RESIZE"] = nil
                 end
             end
         end))
@@ -995,7 +995,7 @@ function newRemote(type, data)
         eventSelect(RemoteTemplate)
         log.GenScript = genScript(log.Remote, log.args)
         if blocked then
-            log.GenScript = "-- THIS REMOTE WAS PREVENTED FROM FIRING TO THE SERVER BY SpyBypassByMrMaxNaJa\n\n" .. log.GenScript
+            log.GenScript = "-- THIS REMOTE WAS PREVENTED FROM FIRING TO THE SERVER BY SpyByMrMaxNaJa\n\n" .. log.GenScript
         end
         if selected == log and RemoteTemplate then
             eventSelect(RemoteTemplate)
@@ -1316,8 +1316,8 @@ function t2s(t, l, p, n, vtv, i, pt, path, tables, tI)
     l += indent -- set indentation level
     for k, v in next, t do -- iterates over table
         size = size + 1 -- changes size for max limit
-        if size > (getgenv().SpyBypassByMrMaxNaJaMaxTableSize or 1000) then
-            s = s .. "\n" .. string.rep(" ", l) .. "-- MAXIMUM TABLE SIZE REACHED, CHANGE 'getgenv().SpyBypassByMrMaxNaJaMaxTableSize' TO ADJUST MAXIMUM SIZE "
+        if size > (getgenv().SpyByMrMaxNaJaMaxTableSize or 1000) then
+            s = s .. "\n" .. string.rep(" ", l) .. "-- MAXIMUM TABLE SIZE REACHED, CHANGE 'getgenv().SpyByMrMaxNaJaMaxTableSize' TO ADJUST MAXIMUM SIZE "
             break
         end
         if rawequal(k, t) then -- checks if the table being iterated over is being used as an index within itself (yay, lua)
@@ -1499,7 +1499,7 @@ function formatstr(s, indentation)
         indentation = 0
     end
     local handled, reachedMax = handlespecials(s, indentation)
-    return '"' .. handled .. '"' .. (reachedMax and " --[[ MAXIMUM STRING SIZE REACHED, CHANGE 'getgenv().SpyBypassByMrMaxNaJaMaxStringSize' TO ADJUST MAXIMUM SIZE ]]" or "")
+    return '"' .. handled .. '"' .. (reachedMax and " --[[ MAXIMUM STRING SIZE REACHED, CHANGE 'getgenv().SpyByMrMaxNaJaMaxStringSize' TO ADJUST MAXIMUM SIZE ]]" or "")
 end
 
 --- Adds \'s to the text as a replacement to whitespace chars and other things because string.format can't yayeet
@@ -1565,13 +1565,13 @@ function handlespecials(s, indentation)
                 n += 1
             end
         end
-    until char == "" or i > (getgenv().SpyBypassByMrMaxNaJaMaxStringSize or 10000)
+    until char == "" or i > (getgenv().SpyByMrMaxNaJaMaxStringSize or 10000)
     while not isFinished(coroutines) do
         RunService.Heartbeat:Wait()
     end
     clear(coroutines)
-    if i > (getgenv().SpyBypassByMrMaxNaJaMaxStringSize or 10000) then
-        s = string.sub(s, 0, getgenv().SpyBypassByMrMaxNaJaMaxStringSize or 10000)
+    if i > (getgenv().SpyByMrMaxNaJaMaxStringSize or 10000) then
+        s = string.sub(s, 0, getgenv().SpyByMrMaxNaJaMaxStringSize or 10000)
         return s, true
     end
     return s, false
@@ -1650,7 +1650,7 @@ local function taskscheduler()
         scheduled = {}
         return
     end
-    if #scheduled > SpyBypassByMrMaxNaJaCONFIG_MaxRemotes + 100 then
+    if #scheduled > SpyByMrMaxNaJaCONFIG_MaxRemotes + 100 then
         table.remove(scheduled, #scheduled)
     end
     if #scheduled > 0 then
@@ -1890,29 +1890,29 @@ local function shutdown()
     clear(logs)
     clear(remoteLogs)
     disablehooks()
-    SpyBypassByMrMaxNaJa3:Destroy()
+    SpyByMrMaxNaJa3:Destroy()
     Storage:Destroy()
     UserInputService.MouseIconEnabled = true
-    getgenv().SpyBypassByMrMaxNaJaExecuted = false
+    getgenv().SpyByMrMaxNaJaExecuted = false
 end
 
 -- main
-if not getgenv().SpyBypassByMrMaxNaJaExecuted then
+if not getgenv().SpyByMrMaxNaJaExecuted then
     local succeeded,err = pcall(function()
         if not RunService:IsClient() then
-            error("SpyBypassByMrMaxNaJa cannot run on the server!")
+            error("SpyByMrMaxNaJa cannot run on the server!")
         end
-        getgenv().SpyBypassByMrMaxNaJaShutdown = shutdown
+        getgenv().SpyByMrMaxNaJaShutdown = shutdown
         onToggleButtonClick()
         if not hookmetamethod then
             ErrorPrompt("Simple Spy V3 will not function to it's fullest capablity due to your executor not supporting hookmetamethod.",true)
         end
         codebox = Highlight.new(CodeBox)
         logthread(spawn(function()
-            local suc,err = pcall(game.HttpGet,game,"https://raw.githubusercontent.com/78n/SpyBypassByMrMaxNaJa/main/UpdateLog.lua")
+            local suc,err = pcall(game.HttpGet,game,"https://raw.githubusercontent.com/78n/SpyByMrMaxNaJa/main/UpdateLog.lua")
             codebox:setRaw((suc and err) or "")
         end))
-        getgenv().SpyBypassByMrMaxNaJa = SpyBypassByMrMaxNaJa
+        getgenv().SpyByMrMaxNaJa = SpyByMrMaxNaJa
         getgenv().getNil = function(name,class)
 			for _,v in next, getnilinstances() do
 				if v.ClassName == class and v.Name == name then
@@ -1940,13 +1940,13 @@ if not getgenv().SpyBypassByMrMaxNaJaExecuted then
         CloseButton.MouseButton1Click:Connect(shutdown)
         table.insert(connections, UserInputService.InputBegan:Connect(backgroundUserInput))
         connectResize()
-        SpyBypassByMrMaxNaJa3.Enabled = true
+        SpyByMrMaxNaJa3.Enabled = true
         logthread(spawn(function()
             delay(1,onToggleButtonUnhover)
         end))
         schedulerconnect = RunService.Heartbeat:Connect(taskscheduler)
         bringBackOnResize()
-        SpyBypassByMrMaxNaJa3.Parent = (gethui and gethui()) or (syn and syn.protect_gui and syn.protect_gui(SpyBypassByMrMaxNaJa3)) or CoreGui
+        SpyByMrMaxNaJa3.Parent = (gethui and gethui()) or (syn and syn.protect_gui and syn.protect_gui(SpyByMrMaxNaJa3)) or CoreGui
         logthread(spawn(function()
             local lp = Players.LocalPlayer or Players:GetPropertyChangedSignal("LocalPlayer"):Wait() or Players.LocalPlayer
             generation = {
@@ -1958,18 +1958,18 @@ if not getgenv().SpyBypassByMrMaxNaJaExecuted then
         end))
     end)
     if succeeded then
-        getgenv().SpyBypassByMrMaxNaJaExecuted = true
+        getgenv().SpyByMrMaxNaJaExecuted = true
     else
         shutdown()
         ErrorPrompt("An error has occured:\n"..rawtostring(err))
         return
     end
 else
-    SpyBypassByMrMaxNaJa3:Destroy()
+    SpyByMrMaxNaJa3:Destroy()
     return
 end
 
-function SpyBypassByMrMaxNaJa:newButton(name, description, onClick)
+function SpyByMrMaxNaJa:newButton(name, description, onClick)
     return newButton(name, description, onClick)
 end
 
@@ -2111,8 +2111,8 @@ function()
             codebox:setRaw("--[[Converting table to string please wait]]")
             selected.Function = v2v({functionInfo = info})
         end
-        codebox:setRaw("-- Calling function info\n-- Generated by the SpyBypassByMrMaxNaJa V9 serializer\n\n"..selected.Function)
-        TextLabel.Text = "Done! Function info generated by the SpyBypassByMrMaxNaJa V9 Serializer."
+        codebox:setRaw("-- Calling function info\n-- Generated by the SpyByMrMaxNaJa V3 serializer\n\n"..selected.Function)
+        TextLabel.Text = "Done! Function info generated by the SpyByMrMaxNaJa V3 Serializer."
     else
         TextLabel.Text = "Error! Selected function was not found."
     end
@@ -2139,7 +2139,7 @@ newButton(
 --- Excludes the selected.Log Remote from the RemoteSpy
 newButton(
     "Exclude (i)",
-    function() return "Click to exclude this Remote.\nExcluding a remote makes SpyBypassByMrMaxNaJa ignore it, but it will continue to be usable." end,
+    function() return "Click to exclude this Remote.\nExcluding a remote makes SpyByMrMaxNaJa ignore it, but it will continue to be usable." end,
     function()
         if selected then
             blacklist[OldDebugId(selected.Remote)] = true
@@ -2151,7 +2151,7 @@ newButton(
 --- Excludes all Remotes that share the same name as the selected.Log remote from the RemoteSpy
 newButton(
     "Exclude (n)",
-    function() return "Click to exclude all remotes with this name.\nExcluding a remote makes SpyBypassByMrMaxNaJa ignore it, but it will continue to be usable." end,
+    function() return "Click to exclude all remotes with this name.\nExcluding a remote makes SpyByMrMaxNaJa ignore it, but it will continue to be usable." end,
     function()
         if selected then
             blacklist[selected.Name] = true
@@ -2162,7 +2162,7 @@ newButton(
 
 --- clears blacklist
 newButton("Clr Blacklist",
-function() return "Click to clear the blacklist.\nExcluding a remote makes SpyBypassByMrMaxNaJa ignore it, but it will continue to be usable." end,
+function() return "Click to clear the blacklist.\nExcluding a remote makes SpyByMrMaxNaJa ignore it, but it will continue to be usable." end,
 function()
     blacklist = {}
     TextLabel.Text = "Blacklist cleared!"
@@ -2171,7 +2171,7 @@ end)
 --- Prevents the selected.Log Remote from firing the server (still logged)
 newButton(
     "Block (i)",
-    function() return "Click to stop this remote from firing.\nBlocking a remote won't remove it from SpyBypassByMrMaxNaJa logs, but it will not continue to fire the server." end,
+    function() return "Click to stop this remote from firing.\nBlocking a remote won't remove it from SpyByMrMaxNaJa logs, but it will not continue to fire the server." end,
     function()
         if selected then
             blocklist[OldDebugId(selected.Remote)] = true
@@ -2182,7 +2182,7 @@ newButton(
 
 --- Prevents all remotes from firing that share the same name as the selected.Log remote from the RemoteSpy (still logged)
 newButton("Block (n)",function()
-    return "Click to stop remotes with this name from firing.\nBlocking a remote won't remove it from SpyBypassByMrMaxNaJa logs, but it will not continue to fire the server." end,
+    return "Click to stop remotes with this name from firing.\nBlocking a remote won't remove it from SpyByMrMaxNaJa logs, but it will not continue to fire the server." end,
     function()
         if selected then
             blocklist[selected.Name] = true
@@ -2194,7 +2194,7 @@ newButton("Block (n)",function()
 --- clears blacklist
 newButton(
     "Clr Blocklist",
-    function() return "Click to stop blocking remotes.\nBlocking a remote won't remove it from SpyBypassByMrMaxNaJa logs, but it will not continue to fire the server." end,
+    function() return "Click to stop blocking remotes.\nBlocking a remote won't remove it from SpyByMrMaxNaJa logs, but it will not continue to fire the server." end,
     function()
         blocklist = {}
         TextLabel.Text = "Blocklist cleared!"
@@ -2311,15 +2311,15 @@ if configs.supersecretdevtoggle then
         return "Load's Simple Spy V2.2"
     end,
     function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/exxtremestuffs/SpyBypassByMrMaxNaJaSource/master/SpyBypassByMrMaxNaJa.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/exxtremestuffs/SpyByMrMaxNaJaSource/master/SpyByMrMaxNaJa.lua"))()
     end)
     newButton("Load SSV3",function()
         return "Load's Simple Spy V3"
     end,
     function()
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SpyBypassByMrMaxNaJa/main/SpyBypassByMrMaxNaJaSource.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SpyByMrMaxNaJa/main/SpyByMrMaxNaJaSource.lua"))()
     end)
-    local SuperSecretFolder = Create("Folder",{Parent = SpyBypassByMrMaxNaJa3})
+    local SuperSecretFolder = Create("Folder",{Parent = SpyByMrMaxNaJa3})
     newButton("SUPER SECRET BUTTON",function()
         return "You dont need a discription you already know what it does"
     end,
